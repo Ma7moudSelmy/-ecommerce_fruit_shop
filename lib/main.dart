@@ -1,4 +1,5 @@
 import 'package:ecommerce_fruit_shop/Views/Home%20Screen.dart';
+import 'package:ecommerce_fruit_shop/Views/Splash%20Screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -12,6 +13,6 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homescreen(),);
+      home: Splashscreen(),);
   }
 }
