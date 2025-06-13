@@ -21,16 +21,31 @@ class _MyWidgetState extends State<Homescreen> {
             },
           ),
           Text(
-            "61 Hopper street..",
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            "Selmy Store",
+            style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
           ),
-          SizedBox(width: 230),
+          SizedBox(width: 226),
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               // Action for shopping cart
             },
           ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.only(bottom: 600),
+        physics: ScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        children: [
+          SizedBox(width: 10),
+
+          Image.asset("assets/Slider 3.png"),
+          SizedBox(width: 10),
+          Image.asset("assets/Slider 2.png"),
+          SizedBox(width: 10),
+          Image.asset("assets/Slider 1.png"),
+          SizedBox(width: 10),
         ],
       ),
     );
