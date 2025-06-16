@@ -66,6 +66,7 @@ class _MyWidgetState extends State<Homescreen> {
           children: [
             const SizedBox(height: 5.0),
 
+            /// Slider
             CarouselSlider.builder(
               itemCount: imageList.length,
               itemBuilder: (context, itemIndex, _) =>
@@ -84,6 +85,7 @@ class _MyWidgetState extends State<Homescreen> {
 
             const SizedBox(height: 10.0),
 
+            /// Categories
             SizedBox(
               height: 120,
               child: ListView(
@@ -119,6 +121,7 @@ class _MyWidgetState extends State<Homescreen> {
 
             const SizedBox(height: 15),
 
+            /// Section Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
@@ -142,66 +145,63 @@ class _MyWidgetState extends State<Homescreen> {
 
             const SizedBox(height: 10),
 
-            const SizedBox(height: 15),
+            /// Products Grid
+           /// سكشن المنتجات - بعد الكاتيجوري
+const SizedBox(height: 15),
 
-            SizedBox(
-              height: 230,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: prodcet.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 160, // عرض كل كارت منتج
-                    margin: const EdgeInsets.only(left: 8, right: 8),
-                    child: Card(
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                prodcet[index].image,
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              prodcet[index].name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text("\$${prodcet[index].price}"),
-                            const SizedBox(height: 4),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.star,
-                                  size: 16,
-                                  color: Colors.orange,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  "${prodcet[index].rate} (${prodcet[index]})",
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+
+
+SizedBox(
+  height: 230, // ارتفاع الكارد
+  child: ListView.builder(
+    scrollDirection: Axis.horizontal,
+    itemCount: prodcet.length,
+    itemBuilder: (context, index) {
+      return Container(
+        width: 160, // عرض كل كارت منتج
+        margin: const EdgeInsets.only(left: 8, right: 8),
+        child: Card(
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Image.asset(
+                    prodcet[index].image,
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  prodcet[index].name,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 4),
+                Text("\$${prodcet[index].price}"),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    const Icon(Icons.star, size: 16, color: Colors.orange),
+                    const SizedBox(width: 4),
+                    Text("${prodcet[index].rate}"),
+                  ],
+                ),
+              ],
             ),
+          ),
+        ),
+      );
+    },
+  ),
+),
+
 
             const SizedBox(height: 20),
           ],
